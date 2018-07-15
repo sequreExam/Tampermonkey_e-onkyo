@@ -1,20 +1,23 @@
 # Tampermonkey_e-onkyo
+曲名が切れて意味わかんないので縦のリストにしたみたいです(記憶なし)
+
     // ==UserScript==
-    // @name           e-onkyo
-    // @version        1.0
+    // @name        e-onkyo
+    // @version     1.0
     // @description :Home Goto HelloWork; :HelloWork Goto Home;
-    // @author         sequre
-    // @match         http://www.e-onkyo.com/search/*
-    // @grant          none
+    // @author      sequre
+    // @match       http://www.e-onkyo.com/search/*
+    // @grant       none
     // ==/UserScript==
-    /* jshint -W097 */
     "use strict";
 
     // Your code here...
-    var lists = document.querySelectorAll(".searchResultAlbumListEntry");
-    var texts = document.querySelectorAll(".searchResultAlbumListEntry p");
-    var images = document.querySelectorAll(".searchResultAlbumListEntry img");
-    for(var i = 0, m = lists.length; i < m; i++)
+    const lists = document.querySelectorAll(".searchResultAlbumListEntry");
+    const texts = document.querySelectorAll(".searchResultAlbumListEntry p");
+    const images = document.querySelectorAll(".searchResultAlbumListEntry img");
+    let i, m;
+
+    for(i = 0, m = lists.length; i < m; i++)
     {
         lists[i].setAttribute("style", "float: initial; height: 64px;");
     }
